@@ -1,4 +1,8 @@
-# todo-app
+# Todo App
+
+A simple Todo App written using Typescript and the Vue 3 Composition API:
+
+![Screenshot 2023-05-25 at 15 51 01](https://github.com/HasimD/TodoApp/assets/25407791/dacc15ec-73d8-4f6c-971c-014edd44130a)
 
 This template should help get you started developing with Vue 3 in Vite.
 
