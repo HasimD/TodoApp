@@ -1,0 +1,173 @@
+:root {
+	--primary: #09a520;
+	--secondary: #3A82EE;
+	--light: #EEE;
+	--grey: #888;
+	--dark: #313154;
+	--danger: #ff5b57;
+	--shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+	--secondary-glow: 0px 0px 4px rgba(58, 130, 238, 0.75);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	width: 400px;
+	box-sizing: border-box;
+	font-family: 'montserrat', sans-serif;
+}
+
+input:not([type="radio"]):not([type="checkbox"]), button {
+	appearance: none;
+	border: none;
+	outline: none;
+	background: none;
+	cursor: initial;
+}
+
+body {
+	background: var(--light);
+	color: var(--dark);
+}
+
+section {
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	padding-left: 1.5rem;
+	padding-right: 1.5em;
+}
+
+h3 {
+	color: var(--dark);
+	font-size: 1rem;
+	font-weight: 400;
+	margin-bottom: 0.5rem;
+}
+
+h4 {
+	color: var(--grey);
+	font-size: 0.875rem;
+	font-weight: 700;
+	margin-bottom: 0.5rem;
+}
+
+h5 {
+	color: var(--grey);
+	font-size: 1.2rem;
+	font-weight: 700;
+	padding-left: 1.5rem;
+}
+
+.create-todo {
+    position: relative;
+	align-items: center;
+	margin-bottom: 1.5rem;
+}
+
+.create-todo input[type="text"] {
+	font-size: 1.125rem;
+	color: var(--dark);
+	background-color: #FFF;
+	border-radius: 0.5rem;
+	box-shadow: var(--shadow);
+	padding: 1rem 1.5rem;
+}
+
+input[type="checkbox"] {
+	display: none;
+}
+
+.bubble {
+	content: "";
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 20px;
+	height: 20px;
+	border: 2px solid var(--secondary);
+	box-shadow: var(--secondary-glow);
+}
+
+.bubble::after {
+	content: "✔";
+	display: block;
+	opacity: 0;
+	padding-left: 0.10rem;
+	width: 20px;
+	height: 20px;
+	transition: 0.2s ease-in-out;
+}
+
+input:checked ~ .bubble::after {
+	opacity: 1;
+}
+
+.create-todo input[type="submit"] {
+    position: absolute;
+	width: 60px;
+	right: -1rem;
+	top: 0.65rem;
+    padding: 0.5rem;
+	color: #FFF;
+	background-color: var(--primary);
+    border-radius: 0.25rem;
+	box-shadow: var(--secondary-glow);
+	cursor: pointer;
+	transition: 0.2s ease-in-out;
+}
+
+.create-todo input[type="submit"]:hover {
+	opacity: 0.75;
+}
+
+.todo-list .list {
+	margin: 1rem 0;
+} 
+
+.todo-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: #FFF;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 1rem;
+}
+
+.todo-item label {
+    display: block;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.todo-item .todo-content {
+    flex: 1 1 0%;
+}
+
+.todo-item .todo-content input {
+    color: var(--dark);
+    font-size: 1.125rem;
+}
+
+.todo-item button.delete {
+    position: absolute;
+	width: 60px;
+    right: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    color: #FFF;
+    background-color: var(--danger);
+	box-shadow: var(--secondary-glow);
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.todo-item button.delete:hover {
+    opacity: 0.75;
+}
+
+.todo-item.done .todo-content input {
+	text-decoration: line-through;
+	color: var(--grey);
+}
